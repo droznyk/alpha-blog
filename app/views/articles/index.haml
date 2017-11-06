@@ -1,0 +1,16 @@
+%h2 Listing all articles
+= button_to 'Create new article', new_article_path, method: :get, class: "btn btn-default"
+%table.table.table-striped
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Actions
+  -@articles.each do |article|
+    %tr
+      %td= article.title
+      %td= article.description
+      %td
+        = button_to 'Show article', article_path(article), method: :get, class: "btn btn-info"
+        = button_to 'Edit article', edit_article_path(article), method: :get, class: "btn btn-warning"
+      
