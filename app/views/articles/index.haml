@@ -13,4 +13,5 @@
       %td
         = button_to 'Show article', article_path(article), method: :get, class: "btn btn-info"
         = button_to 'Edit article', edit_article_path(article), method: :get, class: "btn btn-warning"
+        = button_to 'Delete article', article_path(article), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger"
       
